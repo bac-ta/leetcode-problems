@@ -1,5 +1,8 @@
 package reverse_words_string;
-
+/**
+ * Input string does contain leading or trailing spaces and the words are separated
+ * by a single space
+ * */
 public class ReverseWordsString {
     public String reverseWords(String s) {
         var reversed = new StringBuilder();
