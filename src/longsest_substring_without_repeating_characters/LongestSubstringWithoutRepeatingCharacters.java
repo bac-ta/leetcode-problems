@@ -1,6 +1,5 @@
 package longsest_substring_without_repeating_characters;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,12 +9,12 @@ public class LongestSubstringWithoutRepeatingCharacters {
         Map<Character, Integer> map = new HashMap<>();
         int longestLength = 0;
 
-        for (int i = 0, j = 0; i < s.length(); i++) {
-            if (map.containsKey(s.charAt(i)))
-                j = Math.max(map.get(s.charAt(i)), j);
+        for (int endIndex = 0, startIndex = 0; endIndex < s.length(); endIndex++) {
+            if (map.containsKey(s.charAt(endIndex)))
+                startIndex = Math.max(map.get(s.charAt(endIndex)), startIndex);
 
-            longestLength = Math.max(longestLength, i - j + 1);
-            map.put(s.charAt(i), i + 1);
+            longestLength = Math.max(longestLength, endIndex - startIndex + 1);
+            map.put(s.charAt(endIndex), endIndex + 1);
         }
         return longestLength;
     }
