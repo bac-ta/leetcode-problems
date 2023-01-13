@@ -29,6 +29,6 @@ public class ValidParentheses {
     }
 
     public static void main(String[] args) {
-        new ValidParentheses().isValid("()[]}");
+        new ValidParentheses().isValid("([()])");
     }
 }
