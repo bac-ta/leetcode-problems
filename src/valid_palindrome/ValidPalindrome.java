@@ -15,4 +15,8 @@ public class ValidPalindrome {
         return true;
     }
 
+    public static void main(String[] args) {
+       var results= new ValidPalindrome().isValidPalindrome("[()]");
+        System.out.println(results);
+    }
 }

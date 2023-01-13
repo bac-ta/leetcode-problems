@@ -23,7 +23,8 @@ public class ReverseWordsString {
     }
 
     public static void main(String[] args) {
-        var str = "My name is Bac";
+        var str = "[() ]";
         var reverseStr = new ReverseWordsString().reverseWords(str);
+        System.out.println(reverseStr);
     }
 }
