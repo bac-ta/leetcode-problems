@@ -5,27 +5,32 @@ public class MaximumSubarray {
         int maxEndingHere = nums[0];
         int maxSoFar = nums[0];
         int endIndex = 0;
-        int startIndex, globalMaxStartIndex = 0;
+        int startIndex = 0;
         for (int i = 1; i < nums.length; i++) {
             //Dynamic programing
-            maxEndingHere = Math.max(maxEndingHere + nums[i], nums[i]);
-            maxSoFar = Math.max(maxEndingHere, maxSoFar);
-            if (maxSoFar > maxEndingHere) {
-                endIndex = i - 1;
-            } else {
-                startIndex = i - 1;
-                globalMaxStartIndex = startIndex;
-            }
-        }
 
-        System.out.println(globalMaxStartIndex);
+            if (nums[i] > maxEndingHere + nums[i]) {
+                maxEndingHere = nums[i];
+                startIndex = i;
+            } else {
+                maxEndingHere = nums[i] + maxEndingHere;
+            }
+
+            if (maxEndingHere > maxSoFar) {
+                maxSoFar = maxEndingHere;
+                endIndex = i;
+            }
+
+        }
+        System.out.println(startIndex);
         System.out.println(endIndex);
+
 
         return maxSoFar;
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 5, 6, -1, -110, -2, -4, 55, 57, -7, 4};
+        int[] nums = {1, 2, 3, 5, 6, -1, -110, -2, 1111, -4, 55, 57, -7, 4};
         new MaximumSubarray().maxSubArray(nums);
     }
 
