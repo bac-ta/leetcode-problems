@@ -3,7 +3,11 @@ package single_number;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SingleNumber {
+/**
+ * Given an array of integers, every element appears twice except for one. Find that single
+ * one.
+ */
+public class SingleNumber2 {
     public int singleNumberByXor(int[] A) {
         int num = 0;
         for (int x : A) {
@@ -11,6 +15,7 @@ public class SingleNumber {
         }
         return num;
     }
+
     public int singleNumberBySet(int[] A) {
         Set<Integer> set = new HashSet<>();
         for (int x : A) {
