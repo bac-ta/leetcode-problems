@@ -31,7 +31,7 @@ public class BinarySearchTreeNLR {
         inorderRecursive(root);
     }
 
-    void insert(int key) {
+    public void insert(int key) {
         root = insertRecursive(root, key);
     }
 
