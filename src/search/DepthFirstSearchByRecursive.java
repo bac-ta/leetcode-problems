@@ -4,11 +4,11 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class DepthFirstSearch {
+public class DepthFirstSearchByRecursive {
     private int numsV; //Number of vertices
     private List<Integer> adjacencyList[];
 
-    public DepthFirstSearch(int v) {
+    public DepthFirstSearchByRecursive(int v) {
         numsV = v;
         adjacencyList = new LinkedList[v];
         for (int i = 0; i < v; i++) {
@@ -50,7 +50,7 @@ public class DepthFirstSearch {
 
     // Driver's Code
     public static void main(String args[]) {
-        DepthFirstSearch g = new DepthFirstSearch(4);
+        DepthFirstSearchByRecursive g = new DepthFirstSearchByRecursive(4);
 
         g.addEdge(0, 1);
         g.addEdge(0, 2);
