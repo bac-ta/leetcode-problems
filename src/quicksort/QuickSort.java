@@ -9,11 +9,11 @@ public class QuickSort {
         }
     }
 
-    //Partition to find pivot
+    //Partition to swap and find pivot
     private int partition(int[] arr, int low, int high) {
         int pivot = arr[high];
         int i = (low - 1);
-        for (int j = low; j <= high - 1; j++) {
+        for (int j = low; j < high; j++) {
             if (arr[j] < pivot) {
                 i++;
                 swap(arr, i, j);
