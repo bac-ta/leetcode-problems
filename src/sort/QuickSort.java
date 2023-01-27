@@ -1,5 +1,8 @@
 package sort;
 
+/**
+ * https://www.geeksforgeeks.org/quick-sort/
+ */
 public class QuickSort {
     public void quickSort(int[] arr, int low, int high) {
         if (low < high) {
