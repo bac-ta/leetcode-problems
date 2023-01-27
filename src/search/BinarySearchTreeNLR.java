@@ -1,7 +1,7 @@
 package search;
 
 public class BinarySearchTreeNLR {
-    class Node {
+    static class Node {
         int key;
         Node left, right;
 
