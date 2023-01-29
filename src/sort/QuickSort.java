@@ -22,6 +22,7 @@ public class QuickSort {
                 swap(arr, i, j);
             }
         }
+        //Swap position pivot and element at index (i+1)g
         swap(arr, i + 1, high);
         return (i + 1);
     }
