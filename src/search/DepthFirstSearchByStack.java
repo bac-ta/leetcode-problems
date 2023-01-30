@@ -23,7 +23,7 @@ class DepthFirstSearchByStack {
     }
 
     void DFS(int n) {
-        boolean nodes[] = new boolean[V];
+        boolean isVisited[] = new boolean[V];
 
         Stack<Integer> stack = new Stack<>();
 
@@ -34,15 +34,15 @@ class DepthFirstSearchByStack {
             n = stack.peek();                       //extract the top element of the stack
             stack.pop();                            //remove the top element from the stack
 
-            if (nodes[n] == false) {
+            if (isVisited[n] == false) {
                 System.out.print(n + " ");
-                nodes[n] = true;
+                isVisited[n] = true;
             }
 
-            for (int i = 0; i < adj[n].size(); i++)  //iterate through the linked list and then propagate to the next few nodes
+            for (int i = 0; i < adj[n].size(); i++)  //iterate through the linked list and then propagate to the next few isVisited
             {
                 a = adj[n].get(i);
-                if (!nodes[a])                    //only push those nodes to the stack which aren't in it already
+                if (!isVisited[a])                    //only push those isVisited to the stack which aren't in it already
                 {
                     stack.push(a);                          //push the top element to the stack
                 }
