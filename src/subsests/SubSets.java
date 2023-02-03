@@ -9,7 +9,7 @@ public class SubSets {
         output.add(new ArrayList<>());
 
         for (Integer num : nums) {
-            List<List<Integer>> newSubsets = new ArrayList();
+            List<List<Integer>> newSubsets =  new ArrayList();
             for (List<Integer> curr : output) {
                 newSubsets.add(new ArrayList<>(curr) {{
                     add(num);
