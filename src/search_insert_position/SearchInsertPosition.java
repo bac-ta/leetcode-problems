@@ -5,17 +5,24 @@ package search_insert_position;
  * If not, return the index where it would be if it were inserted in order.
  */
 public class SearchInsertPosition {
-    public int searchInsert(int[] A, int target) {
-        int L = 0, R = A.length - 1;
-        while (L < R) {
+    public int searchInsert(int[] arr, int target) {
+        int left = 0, right = arr.length - 1;
+        while (left <= right) {
             //binary search
-            int M = (L + R) / 2;
-            if (A[M] < target) {
-                L = M + 1;//Move right;
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == target) {
+                return mid;//Move right;
+            } else if (target < arr[mid]) {
+                right = mid - 1;
             } else {
-                R = M;
+                left = mid + 1;
             }
         }
-        return (A[L] < target) ? L + 1 : L;
+        return left;
+    }
+
+    public static void main(String[] args) {
+        var search = new SearchInsertPosition().searchInsert(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14}, 10);
+        System.out.println(search);
     }
 }
