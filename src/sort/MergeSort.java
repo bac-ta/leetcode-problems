@@ -1,7 +1,7 @@
 package sort;
 
 public class MergeSort {
-    public void mergeSort(int arr[], int n) {
+    public void mergeSort(int[] arr, int n) {
         if (n < 2)
             return;
         int mid = n / 2;
@@ -9,20 +9,16 @@ public class MergeSort {
         int[] rightArr = new int[n - mid];
 
         //Fill left array
-        for (int i = 0; i < mid; i++) {
-            leftArr[i] = arr[i];
-        }
+        System.arraycopy(arr, 0, leftArr, 0, mid);
         //Fill right array
-        for (int i = mid; i < n; i++) {
-            rightArr[i - mid] = arr[i];
-        }
+        if (n - mid >= 0) System.arraycopy(arr, mid, rightArr, 0, n - mid);
 
         mergeSort(leftArr, mid);
         mergeSort(rightArr, n - mid);
         merge(arr, leftArr, rightArr, mid, n - mid);
     }
 
-    private void merge(int arr[], int leftArr[], int rightArr[], int left, int right) {
+    private void merge(int[] arr, int[] leftArr, int[] rightArr, int left, int right) {
         int i = 0, j = 0, k = 0;
         while (i < left && j < right) {
             if (leftArr[i] > rightArr[j]) {
