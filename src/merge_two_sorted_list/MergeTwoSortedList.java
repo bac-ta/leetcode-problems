@@ -6,8 +6,6 @@ public class MergeTwoSortedList {
         Node next;
     }
 
-    ;
-
     // Function to create newNode in
     // a linkedlist
     static Node newNode(int key) {
