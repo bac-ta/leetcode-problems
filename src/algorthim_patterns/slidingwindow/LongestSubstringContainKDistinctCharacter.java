@@ -31,7 +31,7 @@ public class LongestSubstringContainKDistinctCharacter {
 
     public static void main(String[] args) {
         String s = "abcbdbdbbdcdabd";
-        int k = 2;
+        int k = 3;
         System.out.println("Longest substring with " + k + " distinct characters: " + new LongestSubstringContainKDistinctCharacter().getLongest(s, k));
     }
 }
