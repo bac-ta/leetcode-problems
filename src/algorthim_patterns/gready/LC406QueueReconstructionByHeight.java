@@ -17,6 +17,7 @@ public class LC406QueueReconstructionByHeight {
 
 
 
+        
         // Dùng list để dễ insert vào vị trí k
         List<int[]> result = new ArrayList<>();
         for (int[] person : people) {
