@@ -25,6 +25,7 @@ public class LC207CourseSchedule {
     }
 
 
+    //0: mark as not visited, 1: mark as visiting, 2: mark as visited
     private boolean hasCycle(int start, List<List<Integer>> graph, int[] visited) {
         Deque<Integer> stack = new ArrayDeque<>();
         stack.add(start);
