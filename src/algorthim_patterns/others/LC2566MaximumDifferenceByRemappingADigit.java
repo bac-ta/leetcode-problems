@@ -1,6 +1,7 @@
-package algorthim_patterns.binary_search;
+package algorthim_patterns.others;
 
-public class LC35SearchInsertPosition {
+//https://leetcode.com/problems/maximum-difference-by-remapping-a-digit
+public class LC2566MaximumDifferenceByRemappingADigit {
 
     public int minMaxDifference(int num) {
         var numStr = String.valueOf(num);
