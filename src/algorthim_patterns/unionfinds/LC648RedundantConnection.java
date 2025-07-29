@@ -1,33 +1,32 @@
 package algorthim_patterns.unionfinds;
 
-public class LC547NumberOfProvinces {
-    public int findCircleNum(int[][] isConnected) {
-        int n = isConnected.length;
+public class LC648RedundantConnection {
+    public int[] findRedundantConnection(int[][] edges) {
+        int n = edges.length;
         UnionFind uf = new UnionFind(n);
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (isConnected[i][j] == 1) {
-                    uf.union(i, j);
-                }
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            if (uf.find(u) == uf.find(v)) {
+                return edge;
             }
+            uf.union(u, v);
         }
-
-        return uf.getCount();
+        return new int[0];
     }
+
 
     static class UnionFind {
         private final int[] parent;
-        private int count;
 
-        public UnionFind(int size) {
+        UnionFind(int size) {
             parent = new int[size];
-            count = size;
             for (int i = 0; i < size; i++) {
                 parent[i] = i;
             }
         }
 
-        public int find( int x) {
+        public int find(int x) {
             if (parent[x] != x) {
                 parent[x] = find(parent[x]);
             }
@@ -39,13 +38,7 @@ public class LC547NumberOfProvinces {
             int rootY = find(y);
             if (rootX != rootY) {
                 parent[rootY] = rootX;
-                count--;
             }
         }
-
-        public int getCount() {
-            return count;
-        }
     }
-
 }
