@@ -1,7 +1,7 @@
 package algorithm_patterns.trie;
 
-public class Trie {
-    static class TrieNode {
+public class LC208ImplementTrie {
+    class TrieNode {
         TrieNode[] children;
         boolean isEnd;
 
@@ -13,7 +13,7 @@ public class Trie {
 
     private final TrieNode root;
 
-    public Trie() {
+    public LC208ImplementTrie() {
         root = new TrieNode();
     }
 
@@ -32,6 +32,18 @@ public class Trie {
     public boolean search(String word) {
         TrieNode node = root;
         for (char c : word.toCharArray()) {
+            int idx = c - 'a';
+            if (node.children[idx] == null) {
+                return false;
+            }
+            node = node.children[idx];
+        }
+        return node.isEnd;
+    }
+
+    public boolean startsWith(String prefix) {
+        TrieNode node = root;
+        for (char c : prefix.toCharArray()) {
             int idx = c - 'a';
             if (node.children[idx] == null) {
                 return false;
