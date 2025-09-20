@@ -1,8 +1,8 @@
 package algorithm_patterns.tree;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 
 public class LC102BinaryTreeLevelOrderTraversal {
@@ -27,25 +27,29 @@ public class LC102BinaryTreeLevelOrderTraversal {
     }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<>();
-        if (root == null) {
-            return result;
-        }
+        List<List<Integer>> results = new ArrayList<>();
 
-        Deque<TreeNode> queue = new LinkedList<>();
+        if (root == null)
+            return results;
+
+        Deque<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-            int size = queue.size();
+            int levelSize = queue.size();
             List<Integer> currentLevel = new ArrayList<>();
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i < levelSize; i++) {
                 var node = queue.poll();
                 currentLevel.add(node.val);
-                if (node.left != null) queue.offer(node.left);
-                if (node.right != null) queue.offer(node.right);
+
+                if (node.left != null)
+                    queue.offer(node.left);
+                if (node.right != null)
+                    queue.offer(node.right);
+
             }
-            result.add(currentLevel);
+            results.add(currentLevel);
         }
-        return result;
+        return results;
     }
 }
