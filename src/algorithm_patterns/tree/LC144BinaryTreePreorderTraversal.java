@@ -35,7 +35,7 @@ public class LC144BinaryTreePreorderTraversal {
         while (!stack.isEmpty()) {
             TreeNode node = stack.pop();
             result.add(node.val);
-            // Lưu ý: đẩy phải trước, trái sau để khi pop sẽ xử lý trái trước
+
             if (node.right != null) {
                 stack.push(node.right);
             }
