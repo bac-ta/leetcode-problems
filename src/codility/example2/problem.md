@@ -5,11 +5,15 @@ Examples:
 
 1. Given N = 3, the function may return "fig", "pea", "nut", etc. Each of these strings contains three different letters
    with the same number of occurrences.
+//abc , cde, def...
 
 2. Given N = 5, the function may return "mango", "grape", "melon", etc.
+//abcde, fghij...
 
 3. Given N = 30, the function may return "aabbcc...oo" (each letter from 'a' to 'o' occurs twice). The string contains
    15 different letters.
+
+// aabbccddeegghh...oo (repeat 2 times for each letter)
 
 Write an efficient algorithm for the following assumptions:
 
