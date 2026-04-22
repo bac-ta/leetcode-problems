@@ -12,6 +12,7 @@ public class BinaryGap {
         for (char c : binary.toCharArray()) {
             if (c == '1') {
                 if (inGap) maxGap = Math.max(maxGap, currentGap);
+                // Reset current gap and mark that we've started
                 currentGap = 0;
                 inGap = true;
             } else if (inGap) {
