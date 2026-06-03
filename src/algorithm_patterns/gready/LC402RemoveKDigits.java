@@ -1,11 +1,12 @@
 package algorithm_patterns.gready;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class LC402RemoveKDigits {
     public String removeKdigits(String num, int k) {
         if (num.length() == k) return "0";
-        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> stack = new ArrayDeque<>();
         int count = 0;
 
         for (int i = 0; i < num.length(); i++) {
