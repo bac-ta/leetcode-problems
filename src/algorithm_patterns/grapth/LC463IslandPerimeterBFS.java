@@ -27,9 +27,7 @@ public class LC463IslandPerimeter {
         int m = grid.length;
         int n = grid[0].length;
         int perimeter = 0;
-
         int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-
         while (!deque.isEmpty()) {
             int[] cell = deque.poll();
             int row = cell[0];
@@ -37,15 +35,12 @@ public class LC463IslandPerimeter {
             for (int[] d : directions) {
                 int newRow = row + d[0];
                 int newCol = col + d[1];
-
                 if (newRow < 0 || newRow >= m || newCol < 0 || newCol >= n || grid[newRow][newCol] == 0) perimeter++;
-
                 else if (!visited[newRow][newCol]) {
                     visited[newRow][newCol] = true;
                     deque.offer(new int[]{newRow, newCol});
                 }
             }
-
         }
         return perimeter;
     }
