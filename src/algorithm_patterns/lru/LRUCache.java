@@ -78,7 +78,7 @@ public class LRUCache<K,V> {
         cache.put(2, "B");
         cache.put(3, "C");
         cache.get(1);
-        cache.put(4, "D"); // Delete 2 keys cause last recent used
+        cache.put(4, "D"); // Delete 2 keys cause least recently used
 
         System.out.println(cache.get(2)); // null
         System.out.println(cache.get(1)); // A
