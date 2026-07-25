@@ -3,7 +3,7 @@ package algorithm_patterns.grapth;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class LC463IslandPerimeter {
+public class LC463IslandPerimeterBFS {
     public int islandPerimeter(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
@@ -22,7 +22,6 @@ public class LC463IslandPerimeter {
         }
         return 0;
     }
-
     private int findPerimeter(int[][] grid, Deque<int[]> deque, boolean[][] visited) {
         int m = grid.length;
         int n = grid[0].length;
