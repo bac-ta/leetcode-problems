@@ -27,7 +27,7 @@ public class LC523ContinuousSubarraySum {
             // If we have seen this remainder before
             if (modIndex.containsKey(remainder)) {
                 // Check if the subarray length is at least 2
-                int prevIndex = modIndex.get(remainder);
+                int prevIndex = modIndex.get(remainder); 
                 if (i - prevIndex >= 2) return true;// Found a valid subarray
             } else {
                 // Store the first occurrence of this remainder
